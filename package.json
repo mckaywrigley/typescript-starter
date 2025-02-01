@@ -1,17 +1,21 @@
 {
   "type": "module",
-  "name": "typescript-starter",
+  "name": "o3-mini-jarvis",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsx index.ts"
+    "start": "tsx index.ts",
+    "stream": "tsx stream.ts"
   },
   "author": "Mckay Wrigley",
   "license": "MIT",
+  "dependencies": {
+    "@ai-sdk/openai": "^1.1.9",
+    "ai": "^4.1.16"
+  },
   "devDependencies": {
     "dotenv": "^16.4.5",
-    "openai": "^4.71.1",
     "tsx": "^4.19.2"
   }
 }

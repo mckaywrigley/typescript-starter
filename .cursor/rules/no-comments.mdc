@@ -1,0 +1,5 @@
+---
+description: Avoid comments.
+globs: 
+---
+- do not add comments unless I ask you to

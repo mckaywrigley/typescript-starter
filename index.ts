@@ -1,22 +1,27 @@
+import { createOpenAI } from "@ai-sdk/openai";
+import { generateText } from "ai";
 import { config } from "dotenv";
-import OpenAI from "openai";
 
 config({ path: ".env.local" });
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
+const openai = createOpenAI({
+  compatibility: "strict"
 });
 
 async function main() {
-  const response = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
-    messages: [
-      { role: "system", content: "You are a helpful assistant." },
-      { role: "user", content: "Hello!" }
-    ]
+  const { text, usage } = await generateText({
+    model: openai("o3-mini"),
+    prompt: "write a for loop in typescript",
+    providerOptions: {
+      openai: {
+        reasoningEffort: "high"
+      }
+    }
   });
 
-  console.log(response.choices[0].message.content);
+  console.log(text);
+  console.log(text.length);
+  console.log(usage);
 }
 
 main();
