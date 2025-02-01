@@ -1,1 +1,1 @@
-# o3-mini Jarvis
+# Typescript Starter for OpenAI + AI SDK
